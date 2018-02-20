@@ -7,13 +7,13 @@ app.controller('TodosCtrl', function($scope, $state, todoService, $ionicActionSh
     console.log("todo when clicked!!", $scope.todo);
     $scope.todoObj.text = $scope.todo
     todoService.add($scope.todoObj).then(function(result){
-      console.log("result!!!", result.data);
       $scope.getTodo();
       $scope.todo = '';
     });
   };
   $scope.refreshTodoArray = function(){
     $scope.todosArray.forEach(function(todo){
+      console.log("hello")
       return todo.isEdit = false;
     })
     $ionicListDelegate.closeOptionButtons();
