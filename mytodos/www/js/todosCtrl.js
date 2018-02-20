@@ -7,7 +7,6 @@ app.controller('TodosCtrl', function($scope, $state, todoService, $ionicActionSh
     console.log("todo when clicked!!", $scope.todo);
     $scope.todoObj.text = $scope.todo
     todoService.add($scope.todoObj).then(function(result){
-      console.log("result!!!", result.data);
       $scope.getTodo();
       $scope.todo = '';
     });
